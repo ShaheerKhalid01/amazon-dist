@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+  <script>
+  // Handle SPA redirect from 404
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var redirectPath = params.get('p');
+    if (redirectPath) {
+      window.history.replaceState(null, null, redirectPath);
+    }
+  })();
+</script>
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
